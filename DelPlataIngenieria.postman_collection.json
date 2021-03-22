@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "ea7d52d7-5f72-449e-ac2b-d09a30ef928d",
+		"name": "DelPlataIngenieria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Test\",\r\n    \"email\":\"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "main",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valores-api",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"presion\": 101000,\r\n            \"caudal\": 98,\r\n            \"viento\": 22.10\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/valores-api",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"valores-api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"a70da940ce76c1217f03376a3ac725fc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/config/create-token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"config",
+						"create-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valores-api-with-token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"presion\": 101000,\r\n            \"caudal\": 98,\r\n            \"viento\": 22.10\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/a70da940ce76c1217f03376a3ac725fc/valores-api",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"a70da940ce76c1217f03376a3ac725fc",
+						"valores-api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
